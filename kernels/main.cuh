@@ -2,15 +2,17 @@
 #include <cuda_runtime.h>
 #include <cuda.h>
 #include <stdint.h>
+#include <stdio.h>
+#include <iostream>
 
 // Structure à taille fixe pour les paramètres géométriques d'une caméra
 struct CudaCamParams {
-    double K[9];
-    double R[9];
-    double t[3];
-    double K_inv[9];
-    double R_inv[9];
-    double t_inv[3];
+    float K[9];
+    float R[9];
+    float t[3];
+    float K_inv[9];
+    float R_inv[9];
+    float t_inv[3];
 };
 
 // Structure pour regrouper une caméra secondaire sur le GPU
