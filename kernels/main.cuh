@@ -5,6 +5,8 @@
 #include <stdio.h>
 #include <iostream>
 
+#define MAX_CAMS 8
+
 // Structure à taille fixe pour les paramètres géométriques d'une caméra
 struct CudaCamParams {
     float K[9];
@@ -22,10 +24,6 @@ struct CudaCam {
     uint8_t* dev_pixels; // Pointeur vers ses pixels sur la mémoire GPU
     CudaCamParams p;
 };
-
-// L'ancienne fonction de test (on la laisse pour l'instant)
-// This is the public interface of our cuda function, called directly in main.cpp
-void wrap_test_vectorAdd();
 
 // Notre fonction principale qui sera appelée depuis le main.cpp
 void wrap_sweeping_plane_cuda(
